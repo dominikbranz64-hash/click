@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Branz Clicker</title>
+
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+  <meta name="theme-color" content="#0f0f0f">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<main class="app">
+
+<header>
+  <h1>BRANZ</h1>
+  <p>Clicker Game</p>
+</header>
+
+<div class="stats">
+  <div>🔥 <span id="score">0</span></div>
+  <div>💎 <span id="gems">0</span></div>
+  <div>⭐ <span id="prestigeCount">0</span></div>
+</div>
+
+<div class="click-area" onclick="clickBranz()">BRANZ</div>
+
+<section class="panel">
+  <h2>SKLEP</h2>
+  <button onclick="buyPower()">💥 Power <span id="powerCost">50</span></button>
+  <button onclick="buyAuto()">🤖 Auto <span id="autoCost">100</span></button>
+</section>
+
+<section class="panel premium">
+  <h2>PREMIUM 💎</h2>
+  <button onclick="buyGemClick()">⚡ Click x2 <span>10💎</span></button>
+  <button onclick="buyGemAuto()">⏱ Auto x2 <span>15💎</span></button>
+  <button onclick="buyGemOffline()">💤 Offline x2 <span>20💎</span></button>
+</section>
+
+<section class="panel prestige">
+  <h2>PRESTIGE ⭐</h2>
+  <button onclick="buyPrestigeClick()">🔥 Permanent Click <span>1⭐</span></button>
+  <button onclick="buyPrestigeAuto()">🤖 Permanent Auto <span>1⭐</span></button>
+  <button onclick="doPrestige()">RESET → BONUS</button>
+</section>
+
+<!-- ADMIN -->
+<div id="adminLock" onclick="openAdmin()">⚙️</div>
+
+<div id="admin" class="admin hidden">
+  <h2>ADMIN PANEL</h2>
+  <input id="aScore" type="number" placeholder="+ SCORE">
+  <input id="aGems" type="number" placeholder="+ GEMS">
+  <input id="aPrestige" type="number" placeholder="+ PRESTIGE">
+  <button onclick="applyAdmin()">APPLY</button>
+  <button onclick="resetGame()">RESET GAME</button>
+</div>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
